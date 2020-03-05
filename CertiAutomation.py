@@ -22,7 +22,7 @@ font_color = (0,0,0)
 # Test with different values for your particular Template
 # This variables determine the exact position where your text will overlay on the template
 # Y adjustment determines the px to position above the horizontal center of the template (may be positive or negative)
-coordinate_y_adjustment = 200
+coordinate_y_adjustment = 500
 # X adjustment determiens the px to position to the right of verticial center of the template (may be positive or negative)
 coordinate_x_adjustment = 50
 
@@ -44,7 +44,7 @@ coordinate_x_adjustment2 = 5650
 
 trial = []
 for i in range(50):
-    trial.append("ACU190"+str(i+21))
+    trial.append("ACU2000"+str(i+5))
 
 i=0
 
@@ -70,7 +70,8 @@ with open(input_txt_file) as input_list:
         text_y = (img.shape[0] + textsize[1]) / 2 - coordinate_y_adjustment
         text_x = int(text_x)
         text_y = int(text_y)
-		
+	
+	#Line to put Name (Comment to omit)	
         cv2.putText(img, text, (text_x, text_y ), font, font_size, font_color, thickness)
         
         
@@ -83,7 +84,9 @@ with open(input_txt_file) as input_list:
         text_y = (img.shape[0] + textsize[1]) / 2 - coordinate_y_adjustment2
         text_x = int(text_x)
         text_y = int(text_y)
-        
+
+
+	#Line to put certificate number (Comment to omit)        
         cv2.putText(img, text, (text_x, text_y ), font, font_size2, font_color2, thickness2)
 
 
@@ -94,4 +97,3 @@ with open(input_txt_file) as input_list:
         i=i+1
 
 cv2.destroyAllWindows()
-
